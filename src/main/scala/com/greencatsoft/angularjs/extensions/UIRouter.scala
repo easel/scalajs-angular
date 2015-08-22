@@ -142,3 +142,14 @@ trait UrlMatcher extends js.Object {
   def parameters(): js.Array[String] = js.native
   def format(values: js.Any): String = js.native
 }
+
+/**
+ * The `$state` service is responsible for representing states as well as transitioning
+ * between them. It also provides interfaces to ask for current state or even states
+ * you're coming from.
+ */
+@injectable("$state")
+trait StateService extends js.Object {
+  def current: State = js.native
+  def reload(): Unit = js.native
+}
